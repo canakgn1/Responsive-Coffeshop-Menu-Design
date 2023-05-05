@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Quicksand:wght@400;500;600&display=swap');
+
+/*-------------------RESET CSS-----------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-color: #ece0e0;
+}
+
+/*--------------------HEADER SECTİON STYLING-------------------------*/
+
+.header{
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Alex Brush', cursive;
+    font-size: 54px;
+    color: #683535;
+}
+
+
+/*--------------------LABEL DIV STYLING------------------------*/
+
+section{
+    padding: 30px;
+}
+
+.title{
+    font-family: 'Alex Brush', cursive;
+    color: #683535;
+    font-size: 42px;
+    font-weight: 500;
+    border-bottom: 1px solid #683535;
+    margin-bottom: 30px;
+}
+
+.primary__div{
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.label{
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    z-index: 999;
+}
+
+.label::before{
+    content: '>';
+    display: block;
+    position: absolute;
+    font-size: 32px;
+    right: 30px;
+    transition: .5s;
+}
+
+/*BEVERAGES LABEL BACKGROUND PHOTO STYLING*/
+
+.cold-drinks{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/cold-drinks.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.hot-drinks{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/hot-drinks.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.hot-chocolates{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/hot-chocolates.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.milkshakes{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/milkshakes.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/*-------------------------CONTENT DIV STYLING-------------------------------*/
+
+.content{
+    background-color: #fff;
+    opacity: 0;
+    height: 0;
+    transform: translateY(-50%);
+    transition: height 0s, opacity .5s, transform .3s;
+    z-index: -1;
+}
+
+.content__div{
+    padding: 20px 30px;
+    border-bottom: 1px solid rgb(104, 53, 53);
+}
+
+.content__div:last-child{
+    border-bottom: none;
+}
+
+.content__title{
+    color: #683535;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portion h4{
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.portion p{
+    color: #4ceb02;
+    font-size: 20px;
+}
+
+/*---------------------ADD ACORDION MENU MOVEMENT----------------------*/
+
+.primary__div.active .content{
+    opacity: 1;
+    height: 100%;
+    transform: translateY(0);
+}
+
+.primary__div.active .label::before{
+    transform: rotate(90deg);
+}
+
+/*FOODS LABEL BACKGROUND PHOTO STYLING*/
+
+.sandwiches{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/sandwiches.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.desserts{
+    background: linear-gradient(79deg, rgba(207,44,142,0) 0%, rgba(0,0,0,0.8) 56%), url(images/cookies.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/*--------------------------SCROLLBAR STYLING---------------------------------*/
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #683535;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+/*-------------------------------RESPONSIVE DESIGN---------------------------------------*/
+
+@media screen and (min-width: 960px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section{
+        padding: 50px;
+    }
+
+    .title{
+        font-size: 56px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px){
+    section{
+        padding: 20px;
+    }
+    
+    .label{
+        font-size: 20px;
+    }
+
+    .label::before{
+        font-size: 24px;
+    }
+
+    .content__title{
+        font-size: 18px;
+    }
+
+    .portion h4,
+    .portion p{
+        font-size: 16px;
+    }
+}
